@@ -286,6 +286,7 @@ int main(int argc, char* argv[]) {
     
     if(limits_okay)
         std::cout << "No violations found!" << std::endl;
+    std::cout << "Total indices: " << points.size() << std::endl;
 }
 
 
