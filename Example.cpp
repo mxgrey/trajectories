@@ -58,7 +58,14 @@ static void print_limit_violation(const std::string& type,
 
 const double eps = 1;
 
-int main() {
+int main(int argc, char* argv[]) {
+    
+    unsigned int test_number = 1;
+    if(argc > 1)
+        test_number = atoi(argv[1]);
+    if(test_number==0)
+        test_number = 1;
+    
 	list<VectorXd> waypoints;
 //	VectorXd waypoint(3);
 //	waypoint << 0.0, 0.0, 0.0;
@@ -76,34 +83,118 @@ int main() {
 //	waypoint << 0.0, 0.0, 1.0;
     
     VectorXd waypoint(6);
-    waypoint << -0.603869, -0.21467, 0.361972, -0.81784, 0, 0;
-    waypoints.push_back(waypoint);
-    waypoint << 0, 0, 0, 0, 0, 0;
-    waypoints.push_back(waypoint);
-    waypoint << -0.0503237, -0.0178896, 0.0301651, -0.0681551, 0, 0;
-    waypoints.push_back(waypoint);
-    waypoint << -0.100647, -0.0357792, 0.0603302, -0.13631, 0, 0;
-    waypoints.push_back(waypoint);
-    waypoint << -0.150971, -0.0536689, 0.0904953, -0.204465, 0, 0;
-    waypoints.push_back(waypoint);
-    waypoint << -0.201295, -0.0715585, 0.12066, -0.27262, 0, 0;
-    waypoints.push_back(waypoint);
-    waypoint << -0.251618, -0.0894481, 0.150826, -0.340776, 0, 0;
-    waypoints.push_back(waypoint);
-    waypoint << -0.301942, -0.107338, 0.180991, -0.408931, 0, 0;
-    waypoints.push_back(waypoint);
-    waypoint << -0.352266, -0.125227, 0.211156, -0.477086, 0, 0;
-    waypoints.push_back(waypoint);
-    waypoint << -0.402589, -0.143117, 0.241321, -0.545241, 0, 0;
-    waypoints.push_back(waypoint);
-    waypoint << -0.452913, -0.161007, 0.271486, -0.613396, 0, 0;
-    waypoints.push_back(waypoint);
-    waypoint << -0.503237, -0.178896, 0.301651, -0.681551, 0, 0;
-    waypoints.push_back(waypoint);
-    waypoint << -0.55356, -0.196786, 0.331816, -0.749706, 0, 0;
-    waypoints.push_back(waypoint);
-    waypoint << -0.603884, -0.214675, 0.361981, -0.817861, 0, 0;
-    waypoints.push_back(waypoint);
+    
+    if(test_number == 1)
+    {
+        waypoint << -0.603869, -0.21467, 0.361972, -0.81784, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << 0, 0, 0, 0, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.0503237, -0.0178896, 0.0301651, -0.0681551, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.100647, -0.0357792, 0.0603302, -0.13631, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.150971, -0.0536689, 0.0904953, -0.204465, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.201295, -0.0715585, 0.12066, -0.27262, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.251618, -0.0894481, 0.150826, -0.340776, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.301942, -0.107338, 0.180991, -0.408931, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.352266, -0.125227, 0.211156, -0.477086, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.402589, -0.143117, 0.241321, -0.545241, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.452913, -0.161007, 0.271486, -0.613396, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.503237, -0.178896, 0.301651, -0.681551, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.55356, -0.196786, 0.331816, -0.749706, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.603884, -0.214675, 0.361981, -0.817861, 0, 0;
+        waypoints.push_back(waypoint);
+    }
+    else if(test_number == 2)
+    {
+        waypoint << -0.603868, -0.784855, -0.315897, -1.26411, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.0355226, -0.0461691, -0.0185826, -0.0743613, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.0710452, -0.0923382, -0.0371652, -0.148723, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.106568, -0.138507, -0.0557479, -0.223084, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.14209, -0.184676, -0.0743305, -0.297445, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.177613, -0.230845, -0.0929131, -0.371806, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.213136, -0.277015, -0.111496, -0.446168, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.248658, -0.323184, -0.130078, -0.520529, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.284181, -0.369353, -0.148661, -0.59489, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.319703, -0.415522, -0.167244, -0.669252, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.355226, -0.461691, -0.185826, -0.743613, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.390748, -0.50786, -0.204409, -0.817974, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.426271, -0.554029, -0.222991, -0.892336, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.461794, -0.600198, -0.241574, -0.966697, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.497316, -0.646367, -0.260157, -1.04106, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.532839, -0.692536, -0.278739, -1.11542, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.568361, -0.738705, -0.297322, -1.18978, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.603884, -0.784875, -0.315905, -1.26414, 0, 0;        
+        waypoints.push_back(waypoint);
+    }
+    else if(test_number == 3)
+    {
+        waypoint << -0.0838371, -0.108964, -0.0438569, -0.175501, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.0355226, -0.0461691, -0.0185826, -0.0743613, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.0710452, -0.0923382, -0.0371652, -0.148723, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.106568, -0.138507, -0.0557479, -0.223084, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.14209, -0.184676, -0.0743305, -0.297445, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.177613, -0.230845, -0.0929131, -0.371806, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.213136, -0.277015, -0.111496, -0.446168, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.248658, -0.323184, -0.130078, -0.520529, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.284181, -0.369353, -0.148661, -0.59489, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.319703, -0.415522, -0.167244, -0.669252, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.355226, -0.461691, -0.185826, -0.743613, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.390748, -0.50786, -0.204409, -0.817974, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.426271, -0.554029, -0.222991, -0.892336, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.461794, -0.600198, -0.241574, -0.966697, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.497316, -0.646367, -0.260157, -1.04106, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.532839, -0.692536, -0.278739, -1.11542, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.568361, -0.738705, -0.297322, -1.18978, 0, 0;
+        waypoints.push_back(waypoint);
+        waypoint << -0.603884, -0.784875, -0.315905, -1.26414, 0, 0;
+        waypoints.push_back(waypoint);
+    }
+    
+    
     
     VectorXd ones(waypoint.size()); ones.setOnes();
     double maxAccel = 0.8;
